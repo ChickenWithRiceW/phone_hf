@@ -93,7 +93,8 @@ char getKeyPressed()
     if (raw != lastRaw) {
         lastRaw = raw;
         changedAt = now;
-    } else if (now - changedAt >= KEYPAD_DEBOUNCE_MS && raw != reported) {
+    }
+    else if (now - changedAt >= KEYPAD_DEBOUNCE_MS && raw != reported) {
         reported = raw;
         if (raw != '\0') {
             playBeep(KEY_BASE_HZ + KEY_STEP_HZ * (row * KEYPAD_COLS + col), KEY_TONE_MS);
